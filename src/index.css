@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Cinzel:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap');
+@import 'tailwindcss';
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.font-pirata { font-family: 'Pirata One', cursive; }
+.font-cinzel { font-family: 'Cinzel', serif; }
+
+/* Mirror / flame gradient background */
+.bg-flame {
+  background: linear-gradient(135deg,
+    #b91c1c 0%,
+    #dc2626 15%,
+    #ef4444 25%,
+    #f97316 38%,
+    #fbbf24 50%,
+    #f97316 62%,
+    #ef4444 75%,
+    #dc2626 85%,
+    #b91c1c 100%
+  );
+  background-size: 300% 300%;
+  animation: flame 6s ease infinite;
+}
+
+@keyframes flame {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Mirror shimmer overlay */
+.mirror-bg {
+  position: relative;
+}
+.mirror-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255,255,255,0.08) 40%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.08) 60%,
+    transparent 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 32px rgba(251,191,36,0.45), 0 8px 32px rgba(0,0,0,0.4);
+  transform: translateY(-6px) scale(1.02);
+}
+.card-glow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #1a0000; }
+::-webkit-scrollbar-thumb { background: #f97316; border-radius: 3px; }
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fbbf24;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+.badge-rare    { background: linear-gradient(135deg,#a855f7,#7c3aed); }
+.badge-epic    { background: linear-gradient(135deg,#f97316,#dc2626); }
+.badge-legend  { background: linear-gradient(135deg,#fbbf24,#f59e0b); color: #1a0a00; }
+.badge-common  { background: linear-gradient(135deg,#6b7280,#374151); }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-10px); }
+}
+.float-anim { animation: float 3s ease-in-out infinite; }
+
+.star-rating span { color: #fbbf24; font-size: 12px; }

@@ -1,0 +1,10 @@
+{
+  "description": "Organize projects with prioritized tasks and deadline reminders to boost productivity and ensure timely completion for individuals and teams.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
