@@ -11,8 +11,8 @@ export default defineConfig(({ mode }) => {
   const emitSourcemaps = mode === 'development'
 
   return {
-    base: process.env.GITHUB_ACTIONS
-  ? '/onepiece/'
+   base: process.env.GITHUB_ACTIONS
+  ? '/project-task-organizer/'
   : process.env.FIGMA_PUBLIC_URL
     ? `${process.env.FIGMA_PUBLIC_URL}/`
     : '/',
