@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     base: process.env.GITHUB_ACTIONS
-  ? '/project-task-organizer/'
+  ? '/onepiece/'
   : process.env.FIGMA_PUBLIC_URL
     ? `${process.env.FIGMA_PUBLIC_URL}/`
     : '/',
